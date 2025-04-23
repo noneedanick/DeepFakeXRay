@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>X-Ray AI Detector</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body class="home">
+    <!-- HERO -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Sharpen Your Radiograph Radar</h1>
+            <p>Detect AI fakes before they reach the clinic.</p>
+            <a href="#features" class="btn btn-cta">See How It Works ↓</a>
+        </div>
+    </section>
+
+    <div class="container">
+        <h2 id="features">Why Participate?</h2>
+        <div class="features">
+            <div class="feature-item">
+                <img src="{{ url_for('static', filename='icons/brain.svg') }}" alt="Brain Icon">
+                <h3>Learn Fast</h3>
+                <p>Interactive quizzes help you retain AI‑vs‑real cues.</p>
+            </div>
+            <div class="feature-item">
+                <img src="{{ url_for('static', filename='icons/shield.svg') }}" alt="Shield Icon">
+                <h3>Boost Accuracy</h3>
+                <p>Improve diagnostic confidence and patient safety.</p>
+            </div>
+        </div>
+        <p>As AI technology advances, the risk of encountering AI-generated images in medical contexts increases. It's crucial to develop skills to identify these images to ensure accurate diagnoses and patient safety.</p>
+        <form action="{{ url_for('start') }}" method="get">
+            <button type="submit" class="btn">Start the Exercise</button>
+        </form>
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+        <p> 2025 X‑Ray AI Detector. Questions? <a href="mailto:mickael.tordjman@mssm.edu">mickael.tordjman@mssm.edu</a></p>
+    </footer>
+    <script>document.documentElement.style.scrollBehavior = 'smooth';</script>
+    <script src="{{ url_for('static', filename='js/scripts.js') }}"></script>
+</body>
+</html>

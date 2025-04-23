@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thank You for Participating</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Thank You!</h1>
+        <p>We appreciate your participation in our X-Ray authenticity exercise. Your contributions help us understand the challenges posed by AI-generated images.</p>
+        <p>If you have any further questions or need assistance, please feel free to reach out to us at:</p>
+        <p><strong>Mickael Tordjman M.D., M.S.</strong></p>
+        <p><strong>E-mail:</strong> mickael.tordjman@mssm.edu</p>
+
+        <p><strong>Murat Yuce M.D., M.S.</strong></p>
+        <p><strong>E-mail:</strong> murat.yuce@mssm.edu</p>
+        <a href="{{ url_for('index') }}" class="btn">Return to Main Page</a>
+    </div>
+</body>
+</html>
