@@ -43,7 +43,10 @@ with col2:
 # --- show stats or final ---
 if st.session_state.idx < len(questions):
     st.write(f"**Correct:** {st.session_state.correct} | **Wrong:** {st.session_state.wrong}")
-    st.write(f"**Accuracy:** {st.session_state.correct/(st.session_state.correct+st.session_state.wrong)*100:.1f}%")
+    if (st.session_state.correct+st.session_state.wrong) > 0:
+        st.write(f"**Accuracy:** {st.session_state.correct/(st.session_state.correct+st.session_state.wrong)*100:.1f}%")
+    else:
+        st.write("**Accuracy:** 0%")
     st.write(f"**Remaining:** {len(questions)-st.session_state.idx}")
 else:
     st.header("Thank You!")
