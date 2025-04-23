@@ -21,7 +21,7 @@ if 'idx' not in st.session_state:
 # --- UI ---
 st.title("X‑Ray AI Detector")
 q = questions[st.session_state.idx]
-st.image(f"static/images/{q['Image_Name']}", use_column_width=True)
+st.image(f"static/images/{q['Image_Name']}", use_container_width=True)
 st.write("Is this radiograph AI‑generated or authentic (real)?")
 
 col1, col2 = st.columns(2)
