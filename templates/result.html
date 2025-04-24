@@ -7,19 +7,19 @@
   <div class="container">
     <img src="{{ url_for('static', filename='images/' + image_name) }}"
          alt="X‑Ray" class="xray-image"/>
-  <p>Your answer:
+  <p><b>Your answer :</b>
     <span class="answer-btn {% if user_answer=='Real' %}answer-real{% else %}answer-ai{% endif %}">
       {{ user_answer }}
     </span>
   </p>
 
-  <p>Correct answer:
+  <p><b>Correct answer :</b>
     <span class="answer-btn {% if correct_answer=='Real' %}answer-real{% else %}answer-ai{% endif %}">
       {{ correct_answer }}
     </span>
   </p>
 
-  <p>Explanation: {{ reasoning }}</p>
+  <p><b>Explanation:</b> {{ reasoning }}</p>
 
   <div class="stats">
     <span>Correct: {{ correct }}</span>
