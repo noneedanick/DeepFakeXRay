@@ -1,8 +1,8 @@
-# xray-ai-detector/xray-ai-detector/README.md
+# AI generated X-Ray Detection Training
 
-# X-Ray AI Detector
+This project is an educational web application that allows users to determine whether X-Ray images are AI-generated or authentic. The application is built using HTML, CSS, and Python Flask.
 
-This project is an educational web application that allows users to determine whether X-Ray images are AI-generated or authentic. The application is built using HTML, CSS, JavaScript, and Python Flask.
+URL: https://deepfakexray.onrender.com/
 
 ## Project Structure
 
@@ -30,7 +30,7 @@ xray-ai-detector
 1. Clone the repository:
    ```
    git clone <repository-url>
-   cd xray-ai-detector
+   cd DeepFakeXRay
    ```
 
 2. Install the required dependencies:
