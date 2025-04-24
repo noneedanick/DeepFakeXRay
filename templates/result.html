@@ -7,14 +7,26 @@
   <div class="container">
     <img src="{{ url_for('static', filename='images/' + image_name) }}"
          alt="X‑Ray" class="xray-image"/>
-    <p>Your answer: <strong>{{ user_answer }}</strong></p>
-    <p>Explanation: {{ reasoning }}</p>
-    <div class="stats">
-      <span>Correct: {{ correct }}</span>
-      <span>Wrong: {{ wrong }}</span>
-      <span>Accuracy: {{ accuracy }}%</span>
-      <span>Remaining: {{ remaining }}</span>
-    </div>
+  <p>Your answer:
+    <span class="answer-btn {% if user_answer=='Real' %}answer-real{% else %}answer-ai{% endif %}">
+      {{ user_answer }}
+    </span>
+  </p>
+
+  <p>Correct answer:
+    <span class="answer-btn {% if correct_answer=='Real' %}answer-real{% else %}answer-ai{% endif %}">
+      {{ correct_answer }}
+    </span>
+  </p>
+
+  <p>Explanation: {{ reasoning }}</p>
+
+  <div class="stats">
+    <span>Correct: {{ correct }}</span>
+    <span>Wrong: {{ wrong }}</span>
+    <span>Accuracy: {{ accuracy }}%</span>
+    <span>Remaining: {{ remaining }}</span>
+  </div>
     <form action="{{ url_for('question') }}" method="get">
       <button type="submit" class="btn">Next Image</button>
     </form>

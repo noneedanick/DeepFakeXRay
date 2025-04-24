@@ -176,6 +176,18 @@ footer {
   margin-bottom: 8px;
 }
 
+/* pill‑style answer badges */
+.answer-btn {
+  display: inline-block;
+  padding: 8px 16px;
+  border-radius: 4px;
+  color: #fff;
+  font-weight: 500;
+  margin: 8px 0;
+}
+.answer-ai   { background-color: #007bff; }
+.answer-real { background-color: #28a745; }
+
 /* FOOTER */
 footer {
   text-align: center;

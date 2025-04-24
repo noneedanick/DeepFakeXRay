@@ -26,24 +26,37 @@ def start():
 def question():
     if 'current_question' not in session or session['current_question'] >= len(session['images']):
         return redirect(url_for('final'))
-    
+
     image_name = session['images'][session['current_question']]
-    return render_template('question.html', image_name=image_name)
+
+    correct = session.get('correct_answers', 0)
+    wrong   = session.get('wrong_answers',   0)
+    total   = correct + wrong
+    accuracy = round(correct / total * 100, 2) if total else 0
+    remaining = len(session['images']) - session['current_question']
+
+    return render_template('question.html',
+        image_name=image_name,
+        correct=correct,
+        wrong=wrong,
+        accuracy=accuracy,
+        remaining=remaining
+    )
 
 @app.route('/answer', methods=['POST'])
 def answer():
     user_answer = request.form['answer']
-    # current image
     idx = session['current_question']
     image_name = session['images'][idx]
-    # ground truth & reasoning
     row = data.loc[data['Image_Name'] == image_name].iloc[0]
     correct_answer = row['Real_or_AI']
     reasoning = row['Reasoning']
+
     # store for result page
     session['last_answer'] = user_answer
     session['last_reasoning'] = reasoning
-    # tally
+    session['last_correct'] = correct_answer
+
     if user_answer == correct_answer:
         session['correct_answers'] += 1
     else:
@@ -55,9 +68,9 @@ def answer():
 def result():
     if session.get('current_question', 0) > len(session.get('images', [])):
         return redirect(url_for('final'))
-    image_name = session['images'][session['current_question'] - 1]
 
-    # compute stats
+    idx = session['current_question'] - 1
+    image_name = session['images'][idx]
     correct = session.get('correct_answers', 0)
     wrong   = session.get('wrong_answers',   0)
     total   = correct + wrong
@@ -66,12 +79,14 @@ def result():
     return render_template('result.html',
         image_name=image_name,
         user_answer=session.get('last_answer'),
+        correct_answer=session.get('last_correct'),
         reasoning=session.get('last_reasoning'),
         correct=correct,
         wrong=wrong,
         accuracy=accuracy,
         remaining=len(session['images']) - session['current_question']
     )
+
 @app.route('/final')
 def final():
     correct = session.get('correct_answers', 0)
