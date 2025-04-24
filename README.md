@@ -7,7 +7,7 @@ URL: https://deepfakexray.onrender.com/
 ## Project Structure
 
 ```
-xray-ai-detector
+DeepFakeXRay
 ├── app.py                  # Main application file for the Flask web server
 ├── requirements.txt        # Lists dependencies required for the project
 ├── q_and_answer.csv        # Ground truth data for the X-Ray images
