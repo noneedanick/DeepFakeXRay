@@ -1,47 +1,8 @@
 # AI generated X-Ray Detection Training
 
-This project is an educational web application that allows users to determine whether X-Ray images are AI-generated or authentic. The application is built using HTML, CSS, and Python Flask.
+This project is an educational web page that allows users to determine whether X-Ray images are AI-generated or authentic.
 
-URL: https://deepfakexray.onrender.com/
 
-## Project Structure
-
-```
-DeepFakeXRay
-├── app.py                  # Main application file for the Flask web server
-├── requirements.txt        # Lists dependencies required for the project
-├── q_and_answer.csv        # Ground truth data for the X-Ray images
-├── static
-│   ├── css
-│   │   └── styles.css      # CSS styles for the web application
-│   ├── js
-│   │   └── scripts.js      # JavaScript code for handling user interactions
-│   └── images              # Directory containing X-Ray images
-├── templates
-│   ├── index.html          # Main page of the application
-│   ├── question.html       # Question page displaying X-Ray images
-│   ├── result.html         # Results page after user answers
-│   └── final.html          # Final page thanking users for participation
-└── README.md               # Documentation for the project
-```
-
-## Setup Instructions
-
-1. Clone the repository:
-   ```
-   git clone <repository-url>
-   cd DeepFakeXRay
-   ```
-
-2. Install the required dependencies:
-   ```
-   pip install -r requirements.txt
-   ```
-
-3. Run the application:
-   ```
-   python app.py
-   ```
 
 4. Open your web browser and navigate to `http://127.0.0.1:5000` to access the application.
 
