@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Question</title>
+  <link rel="stylesheet" href="styles.css">
+  <script>
+    // now point at the CSV in your static folder
+    window.CSV_URL = 'static/q_and_answer.csv';
+  </script>
+</head>
+<body>
+  <div class="container">
+    <div id="quiz-page">
+      <img id="image" class="xray-image" alt="X‑Ray Image">
+      <h2 id="question">Loading…</h2>
+      <div>
+        <button id="ai-button" class="btn">🤖 AI</button>
+        <button id="real-button" class="btn">✅ Real</button>
+      </div>
+    </div>
+
+    <div id="result-page" style="display:none; margin-top:20px;"></div>
+    <div class="stats">
+      <span>Correct: <span id="correct">0</span></span>
+      <span>Wrong:   <span id="wrong">0</span></span>
+      <span>Accuracy:<span id="accuracy">0</span>%</span>
+      <span>Remaining:<span id="remaining">0</span></span>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/papaparse@5.3.2/papaparse.min.js"></script>
+  <script src="scripts.js"></script>
+</body>
+</html>
