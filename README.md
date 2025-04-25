@@ -3,9 +3,6 @@
 This project is an educational web page that allows users to determine whether X-Ray images are AI-generated or authentic.
 
 
-
-4. Open your web browser and navigate to `http://127.0.0.1:5000` to access the application.
-
 ## Usage Guidelines
 
 - Start on the main page, which explains the exercise and its benefits.
